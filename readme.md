@@ -40,7 +40,7 @@ See the individual folder READMEs for detailed instructions.
 
 ## Paper
 
-The latest version of the manuscript is included in this repository.
+The latest version of the manuscript can be found here: https://www.dropbox.com/scl/fi/dk9e7uuc0uk3q5fwnxepd/Narratives_Draft_30jun.pdf?rlkey=5njy9grbz3zlvetulz9mnvvo8&dl=0
 
 ## Citation
 
