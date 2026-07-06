@@ -1,49 +1,49 @@
-# Narrative Belief Updating
+# Fooling Yourself: How Narratives Shape Beliefs
 
-This repository contains the MATLAB code, data, and simulation files accompanying the paper
+This repository contains the code, data, and simulation files accompanying the paper
 
-**Fooling Yourself: How Narratives Shape Beliefs**  
-by Andrea Albertazzi, Paolo Pin, Marco Stimolo, and Alessandro Stringhi
+> **Fooling Yourself: How Narratives Shape Beliefs**  
+> Andrea Albertazzi, Paolo Pin, Marco Stimolo, and Alessandro Stringhi
 
-The repository reproduces the estimation, behavioral calibration, bootstrap inference, simulations, and figures reported in the paper.
+The repository reproduces the empirical analysis, behavioral calibration, model estimation, and simulations presented in the paper.
 
 ## Repository structure
 
 ```
 .
+├── Stata/
+│   └── Stata code and cleaned experimental data
+│
 ├── behavioral-calibration/
-│   ├── bootstrap4_apr23_26.m
-│   ├── data_narrative_with_followup.xls
-│   └── README.md
+│   └── MATLAB code for behavioral-type estimation
 │
 ├── calibration/
-│   ├── original_data.mat
-│   ├── calibration.m
-│   └── README.md
+│   └── MATLAB code for behavioral model estimation
 │
 ├── simulations/
-│   ├── ...
-│   └── README.md
+│   └── Python code for the numerical simulations
 │
-└── Narratives.pdf
+└── Fooling_Yourself_How_Narratives_Shape_Beliefs.pdf
 ```
 
-Each folder contains its own README with instructions for reproducing the corresponding part of the analysis.
+Each folder contains a dedicated `README.md` describing its contents and explaining how to reproduce the corresponding results.
 
 ## Requirements
 
-The code is written in MATLAB. No external toolboxes are required beyond standard MATLAB functionality unless explicitly stated in the corresponding folder README.
+The repository uses three software environments:
 
-## Reproducing the results
+- **Stata** for the empirical analysis;
+- **MATLAB** for behavioral calibration and model estimation;
+- **Python** for the numerical simulations.
 
-The repository is organized by analysis stage:
-
-1. **Calibration** estimates the structural model from the experimental data.
-2. **Behavioral calibration** estimates behavioral types using the experimental dataset and bootstrap procedures.
-3. **Simulations** generate the numerical results and figures reported in the paper.
-
-The individual folder READMEs provide detailed instructions for running each component.
+See the individual folder READMEs for detailed instructions.
 
 ## Paper
 
-The latest version of the manuscript is included in this repository. Please note that the manuscript may be updated while the code remains unchanged.
+The latest version of the manuscript is included in this repository.
+
+## Citation
+
+If you use this code, please cite:
+
+> Albertazzi, A., Pin, P., Stimolo, M., & Stringhi, A. *Fooling Yourself: How Narratives Shape Beliefs.*
