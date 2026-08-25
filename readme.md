@@ -1,29 +1,24 @@
 # Fooling Yourself: How Narratives Shape Beliefs
 
-This repository contains the code, data, and simulation files accompanying the paper
+This repository contains the code and data accompanying the paper
 
-> **Fooling Yourself: How Narratives Shape Beliefs**  
+> **Fooling Yourself: How Narratives Shape Beliefs**
 > Andrea Albertazzi, Paolo Pin, Marco Stimolo, and Alessandro Stringhi
 
-The repository reproduces the empirical analysis, behavioral calibration, model estimation, and simulations presented in the paper.
+The repository reproduces the empirical analysis, behavioral-type classification, and numerical simulations presented in the paper.
 
 ## Repository structure
 
-```
+```text
 .
 ├── Stata/
 │   └── Stata code and cleaned experimental data
 │
 ├── behavioral-calibration/
-│   └── MATLAB code for behavioral-type estimation
+│   └── MATLAB code for behavioral-type classification
 │
-├── calibration/
-│   └── MATLAB code for behavioral model estimation
-│
-├── simulations/
-│   └── Python code for the numerical simulations
-│
-└── Fooling_Yourself_How_Narratives_Shape_Beliefs.pdf
+└── simulations/
+    └── Python code for the numerical simulations
 ```
 
 Each folder contains a dedicated `README.md` describing its contents and explaining how to reproduce the corresponding results.
@@ -32,18 +27,17 @@ Each folder contains a dedicated `README.md` describing its contents and explain
 
 The repository uses three software environments:
 
-- **Stata** for the empirical analysis;
-- **MATLAB** for behavioral calibration and model estimation;
-- **Python** for the numerical simulations.
+* **Stata** for the empirical analysis;
+* **MATLAB** for the behavioral-type classification;
+* **Python** for the numerical simulations.
+
+The behavioral-type classification assumes reporting errors follow a normal distribution truncated to ([0,1]) and uses subject-level BIC comparisons among the four candidate updating rules described in the paper.
 
 See the individual folder READMEs for detailed instructions.
-
-## Paper
-
-The latest version of the manuscript can be found here: https://www.dropbox.com/scl/fi/dk9e7uuc0uk3q5fwnxepd/Narratives_Draft_30jun.pdf?rlkey=5njy9grbz3zlvetulz9mnvvo8&dl=0
 
 ## Citation
 
 If you use this code, please cite:
 
 > Albertazzi, A., Pin, P., Stimolo, M., & Stringhi, A. *Fooling Yourself: How Narratives Shape Beliefs.*
+
