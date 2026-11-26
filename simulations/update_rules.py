@@ -74,7 +74,9 @@ def bayesian_update(belief, signal):
     return numerator / denominator
 
 # Bayesian update for positive-negative signals and reset to 0.5 for neutral signals.
-def make_bayesian_reset_rule(reset_probability_function):
+def make_bayesian_reset_rule(reset_probability_function, rng=None):
+    rng = rng or random
+
     def update_rule(belief, signal):
         if signal in [Signal.positive, Signal.negative]:
             return bayesian_update(belief, signal)
@@ -83,7 +85,7 @@ def make_bayesian_reset_rule(reset_probability_function):
             distance = abs(belief - 0.5)
             p_reset = reset_probability_function(distance)
 
-            if random.random() < p_reset:
+            if rng.random() < p_reset:
                 return 0.5
 
             return belief
@@ -95,15 +97,15 @@ bayesian_reset_urn = make_bayesian_reset_rule(reset_prob_urn)
 bayesian_reset_story = make_bayesian_reset_rule(reset_prob_story)
 bayesian_reset_story_no_info = make_bayesian_reset_rule(reset_prob_story_no_info)
 
-def factory(update_type, **kwargs):
+def factory(update_type, rng=None, **kwargs):
     if update_type == 'basic':
         return basic_update
     elif update_type == 'bayesian':
         return bayesian_update
     elif update_type == 'bayesian_reset_urn':
-        return bayesian_reset_urn
+        return make_bayesian_reset_rule(reset_prob_urn, rng=rng)
     elif update_type == 'bayesian_reset_story':
-        return bayesian_reset_story
+        return make_bayesian_reset_rule(reset_prob_story, rng=rng)
     elif update_type == 'bayesian_reset_story_no_info':
-        return bayesian_reset_story_no_info
+        return make_bayesian_reset_rule(reset_prob_story_no_info, rng=rng)
     return None
